@@ -21,13 +21,6 @@ export default function App() {
     const index = orders.findIndex((item) => item.id === id);
     if (index >= 0) {
       setOrders((prevOrders) => {
-        // return [
-        //   ...prevOrders.slice(0, index),
-        //   Object.assign({}, prevOrders[index], {
-        //     orderCount: prevOrders[index].orderCount + value
-        //   }),
-        //   ...prevOrders.slice(index + 1)
-        // ];
         let newOrders = prevOrders.slice();
         newOrders[index].orderCount += value;
         return [...newOrders];
@@ -51,9 +44,14 @@ export default function App() {
 
   const handleIncrement = (id) => {
     const index = orders.findIndex((item) => item.id === id);
+
+    let newOrders = [...orders];
+    newOrders[index].orderCount += 1;
+    if (newOrders[index].orderCount > newOrders[index].stock) {
+      return;
+    }
+
     setOrders((prevOrders) => {
-      let newOrders = prevOrders.slice();
-      newOrders[index].orderCount += 1;
       return [...newOrders];
     });
   };
@@ -62,6 +60,9 @@ export default function App() {
     setOrders((prevOrders) => {
       let newOrders = prevOrders.slice();
       newOrders[index].orderCount -= 1;
+      if (newOrders[index].orderCount === 0) {
+        newOrders.splice(index, 1);
+      }
       return [...newOrders];
     });
   };

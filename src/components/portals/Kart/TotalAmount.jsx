@@ -1,6 +1,10 @@
 const TotalAmount = (props) => {
   const styles = {
-    amountContainer: { display: "flex", justifyContent: "space-between" }
+    amountContainer: {
+      display: "flex",
+      justifyContent: "space-between",
+      width: "70vw"
+    }
   };
 
   return (
