@@ -1,0 +1,17 @@
+.food-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+  border-bottom: 1px solid gray;
+}
+
+.food-row__input__wrapper{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.food-row__input__wrapper input{
+  width: 30px;
+}

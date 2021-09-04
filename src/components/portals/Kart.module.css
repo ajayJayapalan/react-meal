@@ -1,0 +1,26 @@
+.kart{
+  position: fixed;
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
+  z-index: 10;
+}
+
+.order-list-container{
+  display: flex;
+  width: 70vw;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid gray;
+}
+
+.order-times{
+  margin-left: 1rem;
+  border: 1px solid gray;
+  padding: .1rem .3rem;
+}
+
+.order-left > span {
+  border: 1px solid gray;
+  padding:.1rem .3rem;
+  margin: .3rem;
+}
